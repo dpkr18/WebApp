@@ -12,8 +12,8 @@ public class acat {
 	public HtmlUnitDriver driver;
 	//public WebDriver driver;
 	public WebDriverWait wait;
-	public String URL = "http://18.219.95.9:8080/ProdWebapp";
-	public String URL1 = "http://18.219.95.9:8080/ProdWebapp/avncreatepage.jsp";
+	public String URL = "http://104.42.191.151:8080/ProdWebapp";
+	public String URL1 = "http://104.42.191.151:8080/ProdWebapp/avncreatepage.jsp";
 	//public String URL = "http://localhost:8080/AVNCommunication-1.0/avnlogin.jsp";
 	//public String URL1 = "http://localhost:8080/AVNCommunication-1.0/avncreatepage.jsp";
 	
@@ -26,7 +26,7 @@ public class acat {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		// Login Page content check
 		//driver.findElement(By.xpath("//h1[text()='JUPITER COMMUNICATION']")).isDisplayed();
-		//driver.findElement(By.name("username")).isDisplayed();
+		driver.findElement(By.name("username")).isDisplayed();
 		driver.findElement(By.name("userpassword")).isDisplayed();
 		driver.findElement(By.xpath("//button[text()='Login']")).isDisplayed();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -39,10 +39,10 @@ public class acat {
 
 	@Test(priority = 1)
 	public void repairticket() throws Exception {
-		//WebElement welcome = wait.until(ExpectedConditions
-				//.visibilityOfElementLocated(By.xpath("//h2[text()='WELCOME TO YOUR ACCOUNT OVERVIEW']")));
-		//welcome.isDisplayed();
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		WebElement welcome = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//h2[text()='WELCOME TO YOUR ACCOUNT OVERVIEW']")));
+		welcome.isDisplayed();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		WebElement prepair = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath("//p[text()='REPAIR']")));
 		prepair.isDisplayed();
@@ -64,8 +64,8 @@ public class acat {
 	
 	@Test(priority = 2)
 	public void navigation() {
-		//driver.findElement(By.partialLinkText("Home")).click();
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.findElement(By.partialLinkText("Home")).click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//h2[text()='WELCOME TO YOUR ACCOUNT OVERVIEW']")).isDisplayed();
 		driver.get(URL1);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -77,9 +77,9 @@ public class acat {
 
 	@Test(priority = 3)
 	public void checkout() {
-		//driver.findElement(By.partialLinkText("Logout")).click();
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		//driver.findElement(By.xpath("//h1[text()='JUPITER COMMUNICATION']")).isDisplayed();
+		driver.findElement(By.partialLinkText("Logout")).click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//h1[text()='JUPITER COMMUNICATION']")).isDisplayed();
 		driver.findElement(By.name("username")).sendKeys("guest");
 		driver.findElement(By.name("userpassword")).sendKeys("guest");
 		driver.findElement(By.xpath("//button[text()='Login']")).click();
