@@ -26,7 +26,7 @@ public class acat {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		// Login Page content check
 		//driver.findElement(By.xpath("//h1[text()='JUPITER COMMUNICATION']")).isDisplayed();
-		driver.findElement(By.name("username")).isDisplayed();
+		//driver.findElement(By.name("username")).isDisplayed();
 		driver.findElement(By.name("userpassword")).isDisplayed();
 		driver.findElement(By.xpath("//button[text()='Login']")).isDisplayed();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -39,10 +39,10 @@ public class acat {
 
 	@Test(priority = 1)
 	public void repairticket() throws Exception {
-		WebElement welcome = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//h2[text()='WELCOME TO YOUR ACCOUNT OVERVIEW']")));
-		welcome.isDisplayed();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		//WebElement welcome = wait.until(ExpectedConditions
+				//.visibilityOfElementLocated(By.xpath("//h2[text()='WELCOME TO YOUR ACCOUNT OVERVIEW']")));
+		//welcome.isDisplayed();
+		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		WebElement prepair = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath("//p[text()='REPAIR']")));
 		prepair.isDisplayed();
@@ -64,8 +64,8 @@ public class acat {
 	
 	@Test(priority = 2)
 	public void navigation() {
-		driver.findElement(By.partialLinkText("Home")).click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		//driver.findElement(By.partialLinkText("Home")).click();
+		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//h2[text()='WELCOME TO YOUR ACCOUNT OVERVIEW']")).isDisplayed();
 		driver.get(URL1);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -77,8 +77,8 @@ public class acat {
 
 	@Test(priority = 3)
 	public void checkout() {
-		driver.findElement(By.partialLinkText("Logout")).click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		//driver.findElement(By.partialLinkText("Logout")).click();
+		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		//driver.findElement(By.xpath("//h1[text()='JUPITER COMMUNICATION']")).isDisplayed();
 		driver.findElement(By.name("username")).sendKeys("guest");
 		driver.findElement(By.name("userpassword")).sendKeys("guest");
